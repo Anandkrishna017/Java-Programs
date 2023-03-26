@@ -1,21 +1,21 @@
-public class Prime
-{
+import java.util.Scanner;
 
-  public static void main(String[] args) {
-
-    int num = 29;
-    boolean flag = false;
-    for (int i = 2; i <= num / 2; ++i) {
-      // condition for nonprime number
-      if (num % i == 0) {
-        flag = true;
-        break;
-      }
+public class Prime {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number");
+        int x = sc.nextInt();
+        boolean flag = true;
+        for(int i = 2; i < x/2; i++)
+            if(x%i == 0)
+            {
+                flag = false;
+                break;
+            }
+        if(flag)
+            System.out.println(x+" is a prime number");
+        else
+            System.out.println(x+" is not a prime number");
+                   
     }
-
-    if (!flag)
-      System.out.println(num + " is a prime number.");
-    else
-      System.out.println(num + " is not a prime number.");
-  }
 }
